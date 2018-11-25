@@ -10,6 +10,7 @@
         <h2 class="subtitle">
             All my Laravel Projects
         </h2>
+        <a href="/projects/create">Create new project + </a>
         </div>
     </div>
     </section>

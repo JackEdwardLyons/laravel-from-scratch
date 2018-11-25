@@ -25,4 +25,11 @@
     </div>
     <button class="button is-info" type="submit">Update</button>
 </form>
+
+<form method="POST" action="/projects/{{ $project->id }}">
+    {{ csrf_field() }}
+    {{ method_field('DELETE') }}
+    <br>
+    <button class="is-danger button" method="submit">Delete</button>
+</form>
 @endsection
