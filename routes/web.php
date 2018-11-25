@@ -20,9 +20,13 @@
     PATCH /projects/:d (edit)
     DELETE /projects/:id (destroy)
 */
+Route::get('/', 'ProjectsController@index');
+
 Route::resource('projects', 'ProjectsController');
 // Following a naming convention, we can leverage the
 // Route::resource() function.
+
+
 
 // Route::get('/projects', 'ProjectsController@index');
 // Route::get('/projects/create', 'ProjectsController@create');
