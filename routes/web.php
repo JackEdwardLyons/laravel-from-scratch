@@ -11,10 +11,24 @@
 |
  */
 
-Route::get('/', 'PagesController@home');
-Route::get('/about', 'PagesController@about');
-Route::get('/contact', 'PagesController@contact');
+/*
+7 different behavious
 
-Route::get('/projects', 'ProjectsController@index');
-Route::post('/projects', 'ProjectsController@store'); // storing a new resource
-Route::get('/projects/create', 'ProjectsController@create');
+    GET /projects (index)
+    GET projects/:id (show)
+    POST /projects (store)
+    PATCH /projects/:d (edit)
+    DELETE /projects/:id (destroy)
+*/
+Route::resource('projects', 'ProjectsController');
+// Following a naming convention, we can leverage the
+// Route::resource() function.
+
+// Route::get('/projects', 'ProjectsController@index');
+// Route::get('/projects/create', 'ProjectsController@create');
+// Route::get('/projects/{project}, ProjectsController@show');
+// Route::post('/projects', 'ProjectsController@store'); // storing a new resource
+// Route::get('/projects/{project}/edit', 'ProjectsController@edit');
+// Route::patch('/projects/{project}', 'ProjectsController@update');
+// Route::delete('/projects/{project}', 'ProjectsController@destory');
+
