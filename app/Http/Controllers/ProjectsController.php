@@ -17,20 +17,14 @@ class ProjectsController extends Controller
         return view('projects.create');
     }
 
-    public function store()
+    public function store(Project $project)
     {
-        $project = new Project();
-        $project->title = request('title');
-        $project->description = request('description');
-
-        $project->save();
-        
+        $project::create(request(['title', 'description']));
         return redirect('/projects');
     }
 
-    public function edit($id) // example.com/projects/{project}/edit
+    public function edit(Project $project)
     {
-        $project = Project::findOrFail($id);
         return view('projects.edit', compact('project'));
     }
 
@@ -38,28 +32,20 @@ class ProjectsController extends Controller
      * Update the specified resource in storage.
      *
      */
-    public function update($id)
+    public function update(Project $project)
     {
-        $project = Project::findOrFail($id);
-
-        $project->title = request('title');
-        $project->description = request('description');
-
-        $project->save();
-
-        return redirect('/projects');
-
-    }
-
-    public function destroy($id)
-    {
-        $project = Project::findOrFail($id)->delete();
-
+        $project->update(request(['title', 'description']));
         return redirect('/projects');
     }
 
-    public function show()
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect('/projects');
+    }
+
+    public function show(Project $project)
+    {
+        return view('projects.show', compact('project'));
     }
 }

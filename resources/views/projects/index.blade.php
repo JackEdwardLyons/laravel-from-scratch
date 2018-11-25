@@ -19,7 +19,9 @@
     <li>
         <p> -
             <strong>
-                {{ $project->title }}:
+                <a href="/projects/{{ $project->id }}">
+                    {{ $project->title }}:
+                </a>
             </strong>
             <span class="description">
                 {{ $project->description }}

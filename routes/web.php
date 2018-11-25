@@ -13,7 +13,6 @@
 
 /*
 7 different behavious
-
     GET /projects (index)
     GET projects/:id (show)
     POST /projects (store)
@@ -25,8 +24,6 @@ Route::get('/', 'ProjectsController@index');
 Route::resource('projects', 'ProjectsController');
 // Following a naming convention, we can leverage the
 // Route::resource() function.
-
-
 
 // Route::get('/projects', 'ProjectsController@index');
 // Route::get('/projects/create', 'ProjectsController@create');
