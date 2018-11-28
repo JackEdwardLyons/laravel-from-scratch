@@ -11,14 +11,14 @@
     <div class="field">
         <label class="label" for="title">Title</label>
         <div class="control">
-            <input class="input" type="text" id="title" name="title" value="{{ $project->title }}">
+            <input required class="input" type="text" id="title" name="title" value="{{ $project->title }}">
         </div>
     </div>
 
     <div class="field">
         <label class="label" for="description">Description</label>
         <div class="control">
-            <textarea class="textarea" name="description" id="description">
+            <textarea required class="textarea" name="description" id="description">
             {{ $project->description }}
             </textarea>
         </div>

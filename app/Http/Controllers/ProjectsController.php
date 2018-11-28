@@ -19,7 +19,12 @@ class ProjectsController extends Controller
 
     public function store(Project $project)
     {
-        $project::create(request(['title', 'description']));
+        $validated_fields = request()->validate([
+            'title' => ['required', 'min:3'],
+            'description' => ['required', 'min:3']
+        ]);
+
+        $project::create($validated_fields);
         return redirect('/projects');
     }
 
